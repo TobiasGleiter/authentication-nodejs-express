@@ -9,13 +9,6 @@ const GOOGLE_CLIENT_ID: string = process.env.GOOGLE_CLIENT_ID as string;
 const GOOGLE_CLIENT_SECRET: string = process.env.GOOGLE_CLIENT_SECRET as string;
 const GOOGLE_CALLBACK_URL: string = process.env.GOOGLE_CALLBACK_URL as string;
 
-passport.serializeUser(function (user, cb) {
-  cb(null, user);
-});
-passport.deserializeUser(function (obj: unknown, cb) {
-  cb(null, obj);
-});
-
 passport.use(
   new GoogleStrategy(
     {
@@ -29,3 +22,12 @@ passport.use(
     },
   ),
 );
+
+passport.serializeUser(function (user, cb) {
+  cb(null, user);
+});
+passport.deserializeUser(function (obj: unknown, cb) {
+  cb(null, obj);
+});
+
+export default passport;
