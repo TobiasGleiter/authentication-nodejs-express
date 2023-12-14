@@ -1,0 +1,8 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "parserOptions": { "ecmaVersion": 2018, "sourceType": "module" },
+  "rules": {
+    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }] // underscore variables when they are unsued but going to be used
+  }
+}
